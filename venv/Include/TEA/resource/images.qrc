@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="register">
+    <file>images/register_background.jpg</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>images/嫩芽logo.png</file>
+  </qresource>
+  <qresource prefix="login">
+    <file>images/嫩芽logo.png</file>
+    <file>images/嫩芽动图.gif</file>
+    <file>images/向下箭头.png</file>
+    <file>images/二维码.jpeg</file>
+    <file>images/好护盾.png</file>
+    <file>images/自来也.jpg</file>
+    <file>images/宇智波鼬.jpg</file>
+  </qresource>
+</RCC>

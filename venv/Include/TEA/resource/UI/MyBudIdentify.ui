@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QWidget" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1100</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>嫩芽识别系统</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>850</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1100</width>
+     <height>850</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1100</width>
+     <height>850</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane{
+	border: 2px solid rgb(210, 210, 210);
+	background:rgb(246, 246, 246);
+	border-top-color:transparent;
+}
+QTabWidget::tab-bar{
+	background:rgb(0, 0, 0);
+	subcontrol-position:left;
+}
+QTabBar::tab{
+	font: 20pt &quot;楷体&quot;;
+	width:150px;
+	height:50px;
+	background-color: rgb(170, 255, 0);
+	border: 2px solid rgb(210, 210, 210);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+QTabBar::tab:selected{	
+	background:rgb(246, 246, 246);
+	border-bottom-color:rgb(246, 246, 246);
+}</string>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <property name="elideMode">
+    <enum>Qt::ElideMiddle</enum>
+   </property>
+   <property name="tabsClosable">
+    <bool>false</bool>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="tabBarAutoHide">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>图像标注</string>
+    </attribute>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>320</y>
+       <width>251</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 36pt &quot;楷体&quot;;
+background-color: rgb(0, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>图像标注</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="imageProcessTab">
+    <attribute name="title">
+     <string>图像处理</string>
+    </attribute>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,8">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <widget class="FileBrowser" name="fileBrowser">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>11</y>
+          <width>211</width>
+          <height>751</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_2" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="1,24,2">
+        <item>
+         <widget class="QWidget" name="widget_3" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="cutBtn">
+             <property name="text">
+              <string>裁剪</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="mirrorBtn">
+             <property name="text">
+              <string>镜像</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="biggerBtn">
+             <property name="text">
+              <string>放大</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="smallerBtn">
+             <property name="text">
+              <string>缩小</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ratateBtn">
+             <property name="text">
+              <string>旋转</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="annotationBtn">
+             <property name="text">
+              <string>图像标注</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="ImageView" name="pictureShow"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
+font: 20pt &quot;楷体&quot;;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="modelTrainTab">
+    <attribute name="title">
+     <string>模型训练</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="budIdentifyTab">
+    <attribute name="title">
+     <string>嫩芽识别</string>
+    </attribute>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FileBrowser</class>
+   <extends>QTreeView</extends>
+   <header>MyFileBrowser</header>
+   <slots>
+    <signal>sendSrc()</signal>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>ImageView</class>
+   <extends>QGraphicsView</extends>
+   <header>MyImageView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>fileBrowser</sender>
+   <signal>sendSrc()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>getSrc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>157</x>
+     <y>606</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-175</x>
+     <y>599</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ratateBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageRatate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>874</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>872</x>
+     <y>-14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cutBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageCut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>-12</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mirrorBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageMirror()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>489</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>-19</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>biggerBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageBigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>599</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>597</x>
+     <y>-8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>smallerBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageSmaller()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>731</x>
+     <y>94</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>728</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>annotationBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageAnnotation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>993</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>968</x>
+     <y>-36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>mainWindow</receiver>
+   <slot>imageAnnotation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>587</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>-34</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>getSrc()</slot>
+  <slot>imageRatate()</slot>
+  <slot>imageEqualize()</slot>
+  <slot>imageCut()</slot>
+  <slot>imageMirror()</slot>
+  <slot>imageBigger()</slot>
+  <slot>imageSmaller()</slot>
+  <slot>imageAnnotation()</slot>
+ </slots>
+</ui>
